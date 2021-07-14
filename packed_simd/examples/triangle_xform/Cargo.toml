@@ -1,0 +1,12 @@
+[package]
+name = "triangle_xform"
+version = "0.1.0"
+authors = ["Gonzalo Brito Gadeschi <gonzalobg88@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+packed_simd = { package = "packed_simd_2", path = "../.." }
+
+[dev-dependencies]
+rand = "0.7.0"
+time = "0.1.40"

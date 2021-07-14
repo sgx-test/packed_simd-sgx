@@ -1,0 +1,12 @@
+[package]
+name = "packed"
+version = "0.0.0"
+
+[dependencies]
+cfg-if = { path = "./cfg-if", default-features = false }
+compiler_builtins = { path = "./compiler_builtins", default-features = false }
+core_arch = { path = "./core_arch", default-features = false }
+libm = { path = "./libm", default-features = false }
+packed_simd_2 = { path = "./packed_simd", default-features = false }
+rustc-std-workspace-core = { path = "./rustc-std-workspace-core", default-features = false }
+

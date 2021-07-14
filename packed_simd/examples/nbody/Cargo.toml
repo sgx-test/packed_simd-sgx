@@ -1,0 +1,21 @@
+[package]
+name = "nbody"
+version = "0.1.0"
+authors = ["Gonzalo Brito Gadeschi <gonzalobg88@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+packed_simd = { package = "packed_simd_2", path = "../.." }
+
+[[bin]]
+name = "nbody"
+path = "src/main.rs"
+
+[lib]
+name = "nbody_lib"
+path = "src/lib.rs"
+
+[features]
+default = [ ]
+sleef-sys = [ "packed_simd/sleef-sys" ]
+core_arch = [ "packed_simd/core_arch" ]
