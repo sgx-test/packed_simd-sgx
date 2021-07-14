@@ -211,6 +211,7 @@
 //! options during builds. For more information, see the [Performance
 //! guide](https://rust-lang-nursery.github.io/packed_simd/perf-guide/)
 
+
 #![feature(
     const_generics,
     repr_simd,
@@ -246,6 +247,13 @@
 #![cfg_attr(test, feature(hashmap_internals))]
 #![deny(rust_2018_idioms, clippy::missing_inline_in_public_items)]
 #![no_std]
+
+#![cfg_attr(all(feature = "mesalock_sgx", not(target_env = "sgx")), no_std)]
+#![cfg_attr(all(target_env = "sgx", target_vendor = "mesalock"), feature(rustc_private))]
+
+#[cfg(all(feature = "mesalock_sgx", not(target_env = "sgx")))]
+#[macro_use]
+extern crate sgx_tstd as std;
 
 use cfg_if::cfg_if;
 
